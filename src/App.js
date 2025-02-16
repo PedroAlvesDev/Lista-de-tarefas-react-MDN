@@ -1,12 +1,11 @@
-import { nanoid } from "nanoid";
 import { useState } from 'react';
+import { nanoid } from "nanoid";
 import './App.css';
+import Todo from './components/Todo';
 import Form from './components/Form';
 import FilterButton from './components/FilterButton';
-import Todo from './components/Todo';
 
 function App(props) {
-  const [tasks, setTasks] = useState(props.tasks);
 
   function addTask(name) {
     const newTask = { id: `todo-${nanoid()}`, name, completed: false };
@@ -24,10 +23,12 @@ function App(props) {
   };
 
   function deleteTask(id) {
-    console.log(id);
+    const remainingTasks = tasks.filter((task) => id !== task.id);
+    setTasks(remainingTasks);
   };
-
-  const taskList = tasks.map((task) => (
+  
+  const [tasks, setTasks] = useState(props.tasks);
+  const taskList = tasks?.map((task) => (
     <Todo
       id={task.id}
       name={task.name}
@@ -38,8 +39,9 @@ function App(props) {
     />
   ));
 
-  const tasksNoun = taskList.length !== 1 ? "tasks" : "task";
-  const headingText = `${taskList.length} ${tasksNoun} remaining`;
+  const remainingTasks = tasks.filter(task => !task.completed).length;
+  const tasksNoun = remainingTasks === 1 ? "Task" : "Tasks";
+  const headingText = `${remainingTasks} ${tasksNoun} remaining`;
 
   return (
     <div className="todoapp stack-large">
