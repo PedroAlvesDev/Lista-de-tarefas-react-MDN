@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 *:focus-visible {
-  outline: 3px dashed #228bec;
+  outline: 3px dashed #008F8C;
   outline-offset: 0;
 }
 html {
@@ -51,11 +51,11 @@ input {
   overflow: visible;
 }
 input[type="text"] {
-  border-radius: 0;
+  border-radius: 8px;
 }
 body {
-  background-color: #f5f5f5;
-  color: #4d4d4d;
+  background-color: #301c1c;
+  color: #F6F6FA;
   font:
     1.6rem/1.25 Arial,
     sans-serif;
@@ -77,6 +77,7 @@ body {
 }
 .btn {
   border: 0.2rem solid #4d4d4d;
+  border-radius: 8px;
   cursor: pointer;
   padding: 0.8rem 1rem 0.7rem;
   text-transform: capitalize;
@@ -90,16 +91,16 @@ body {
   text-decoration: underline;
 }
 .btn__danger {
-  background-color: #ca3c3c;
-  border-color: #bd2130;
-  color: #fff;
+  background-color: #563027;
+  border-color: #563027;
+  color: #F6F6FA;
 }
 .btn__filter {
   border-color: lightgrey;
 }
 .btn__primary {
   background-color: #000;
-  color: #fff;
+  color: #F6F6FA;
 }
 .btn-group {
   display: flex;
@@ -149,13 +150,14 @@ body {
 /* End global styles */
 /* General app styles */
 .todoapp {
-  background: #fff;
+  background: #1C2326;
   box-shadow:
     0 2px 4px 0 rgb(0 0 0 / 20%),
     0 2.5rem 5rem 0 rgb(0 0 0 / 10%);
   margin: 2rem 0 4rem 0;
   padding: 1rem;
   position: relative;
+  border-radius: 20px;
 }
 @media screen and (min-width: 550px) {
   .todoapp {
@@ -185,6 +187,7 @@ body {
   text-align: center;
 }
 .input__lg {
+  background: #F6F6FA;
   border: 2px solid #000;
   padding: 2rem;
 }
@@ -216,6 +219,7 @@ body {
   flex: 0 0 100%;
 }
 .todo-text {
+  background: #F6F6FA;
   border: 2px solid #565656;
   min-height: 4.4rem;
   padding: 0.4rem 0.8rem;
